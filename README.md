@@ -17,4 +17,4 @@ when tiling = 0 it will behave like a normal KSampler
 
 
 # Credit
-Based off WAS Studio and using the example for tiling from Automatic1111
+Based off WAS Studio and using the example for tiling from Automatic1111 and https://github.com/tjm35/asymmetric-tiling-sd-webui/
