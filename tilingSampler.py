@@ -13,7 +13,7 @@ class Tiled_KSampler:
         return {"required":
                 {"model": ("MODEL", ),
                  "seed": ("SEED", ),
-                 "tiling": ("INT", {"default": 0, "min": 0, "max": 1}),
+                 "tiling": ("INT", {"default": 1, "min": 0, "max": 1}),
                  "steps": ("INT", {"default": 20, "min": 1, "max": 10000}),
                  "cfg": ("FLOAT", {"default": 8.0, "min": 0.0, "max": 100.0}),
                  "sampler_name": (comfy.samplers.KSampler.SAMPLERS, ),
