@@ -15,6 +15,7 @@ add Tiled KSampler Node and use like KSampler
 
 
 when tiling = 1 it will tile
+
 when tiling = 0 it will behave like a normal KSampler
 
 
@@ -24,6 +25,7 @@ add Asymmetric Tiled KSampler Node and use like KSampler
 
 
 when tileX = 1 it will tile in the X direction
+
 when tileY = 1 it will tile in the Y direction
 
 
