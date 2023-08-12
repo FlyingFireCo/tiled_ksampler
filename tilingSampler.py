@@ -33,8 +33,7 @@ class Tiled_KSampler:
             layer.padding_mode = 'circular' if enable else 'zeros'
 
     def sample(self, model, seed, tiling, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=1.0):
-        if tiling == 1:
-            self.apply_circular(model.model, True)
+        self.apply_circular(model.model, tiling == 1)
         return nodes.common_ksampler(model, seed['seed'], steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=denoise)
 
 
