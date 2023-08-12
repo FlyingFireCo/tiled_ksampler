@@ -12,7 +12,7 @@ class Tiled_KSampler:
     def INPUT_TYPES(cls):
         return {"required":
                 {"model": ("MODEL", ),
-                 "seed": ("SEED", ),
+                 "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                  "tiling": ("INT", {"default": 1, "min": 0, "max": 1}),
                  "steps": ("INT", {"default": 20, "min": 1, "max": 10000}),
                  "cfg": ("FLOAT", {"default": 8.0, "min": 0.0, "max": 100.0}),
