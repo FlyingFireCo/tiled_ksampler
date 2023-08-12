@@ -9,7 +9,7 @@
 Start comfyui
 
 
-#Tiled KSampler:
+# Tiled KSampler:
 
 add Tiled KSampler Node and use like KSampler
 
@@ -18,7 +18,7 @@ when tiling = 1 it will tile
 when tiling = 0 it will behave like a normal KSampler
 
 
-#Asymmetric Tiled KSampler:
+# Asymmetric Tiled KSampler:
 
 add Asymmetric Tiled KSampler Node and use like KSampler
 
