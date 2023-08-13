@@ -100,7 +100,22 @@ class Tiled_KSampler:
         return nodes.common_ksampler(model, seed, steps, cfg, sampler_name, scheduler, positive, negative, latent_image, denoise=denoise)
 
 
+class CircularVAEDecode:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": { "samples": ("LATENT", ), "vae": ("VAE", )}}
+    RETURN_TYPES = ("IMAGE",)
+    FUNCTION = "decode"
+
+    CATEGORY = "latent"
+
+    def decode(self, vae, samples):
+        for layer in [layer for layer in vae.first_stage_model.modules() if isinstance(layer, torch.nn.Conv2d)]:
+            layer.padding_mode = 'circular'
+        return (vae.decode(samples["samples"]), )
+
 NODE_CLASS_MAPPINGS = {
         "Tiled KSampler": Tiled_KSampler,
         "Asymmetric Tiled KSampler": Asymmetric_Tiled_KSampler,
+        "Circular VAEDecode": CircularVAEDecode,
 }
